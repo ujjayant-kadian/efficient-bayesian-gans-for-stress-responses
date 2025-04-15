@@ -1,0 +1,42 @@
+{
+    "BVP_series_RMSE": 1.8024945166685638,
+    "BVP_series_MMD": 0.8865365982055664,
+    "BVP_series_Wasserstein": 0.696346708921618,
+    "BVP_series_FID_like": 0.26864638924598694,
+    "BVP_series_Real_Stats": {
+        "BVP_series": {
+            "mean": 0.026018377393484116,
+            "std": 1.1201411485671997,
+            "min": -3.9120688438415527,
+            "max": 3.7933812141418457,
+            "range": 7.705450057983398,
+            "median": 0.014483561739325523
+        }
+    },
+    "BVP_series_Generated_Stats": {
+        "BVP_series": {
+            "mean": 0.509631335735321,
+            "std": 1.3065946102142334,
+            "min": -1.8784173727035522,
+            "max": 2.883922815322876,
+            "range": 4.762340068817139,
+            "median": 0.3731631636619568
+        }
+    },
+    "BVP_series_Classifier_Mean_Accuracy": 0.9964285714285716,
+    "BVP_series_Classifier_Std_Accuracy": 0.007142857142857162,
+    "BVP_series_Uncertainty": {
+        "coverage": {
+            "BVP_series": {
+                "mean_coverage": 0.11333333333333333,
+                "expected_coverage": 0.9
+            }
+        },
+        "negative_log_likelihood": {
+            "BVP_series": 76.03381743231938
+        },
+        "calibration_plot_paths": {
+            "BVP_series": "evaluation_results/uncertainty_plots/calibration_BVP_series.png"
+        }
+    }
+}

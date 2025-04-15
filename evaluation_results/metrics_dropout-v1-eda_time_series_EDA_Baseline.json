@@ -1,0 +1,42 @@
+{
+    "EDA_series_RMSE": 0.8978643496525768,
+    "EDA_series_MMD": 0.23563754558563232,
+    "EDA_series_Wasserstein": 0.6070423272456016,
+    "EDA_series_FID_like": 0.42105913162231445,
+    "EDA_series_Real_Stats": {
+        "EDA_series": {
+            "mean": -0.5480285882949829,
+            "std": 0.7872772812843323,
+            "min": -2.4379196166992188,
+            "max": 3.3919906616210938,
+            "range": 5.8299102783203125,
+            "median": -0.7514380812644958
+        }
+    },
+    "EDA_series_Generated_Stats": {
+        "EDA_series": {
+            "mean": -0.19048243761062622,
+            "std": 0.24577946960926056,
+            "min": -1.469592571258545,
+            "max": 1.974037528038025,
+            "range": 3.4436302185058594,
+            "median": -0.17479604482650757
+        }
+    },
+    "EDA_series_Classifier_Mean_Accuracy": 1.0,
+    "EDA_series_Classifier_Std_Accuracy": 0.0,
+    "EDA_series_Uncertainty": {
+        "coverage": {
+            "EDA_series": {
+                "mean_coverage": 0.15226666666666666,
+                "expected_coverage": 0.9
+            }
+        },
+        "negative_log_likelihood": {
+            "EDA_series": 24.90849541562459
+        },
+        "calibration_plot_paths": {
+            "EDA_series": "evaluation_results/uncertainty_plots/calibration_EDA_series_1.png"
+        }
+    }
+}

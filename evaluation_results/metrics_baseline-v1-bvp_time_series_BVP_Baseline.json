@@ -1,0 +1,28 @@
+{
+    "BVP_series_RMSE": 1.1391183491477843,
+    "BVP_series_MMD": 0.3132812976837158,
+    "BVP_series_Wasserstein": 0.2822614572442641,
+    "BVP_series_FID_like": 0.17868651449680328,
+    "BVP_series_Real_Stats": {
+        "BVP_series": {
+            "mean": -0.0005503020947799087,
+            "std": 0.9861395955085754,
+            "min": -3.937926769256592,
+            "max": 3.9351985454559326,
+            "range": 7.873125076293945,
+            "median": 0.07711103558540344
+        }
+    },
+    "BVP_series_Generated_Stats": {
+        "BVP_series": {
+            "mean": 0.05615372955799103,
+            "std": 0.5672467947006226,
+            "min": -0.9023703932762146,
+            "max": 1.0216445922851562,
+            "range": 1.9240150451660156,
+            "median": 0.004318876191973686
+        }
+    },
+    "BVP_series_Classifier_Mean_Accuracy": 0.9820594059405942,
+    "BVP_series_Classifier_Std_Accuracy": 0.00749431049105256
+}

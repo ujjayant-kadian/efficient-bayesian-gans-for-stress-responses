@@ -1,0 +1,7 @@
+*.pyc
+__pycache__/
+**/__pycache__/
+data/raw/
+venv/
+models/
+final_models/**/*.pt

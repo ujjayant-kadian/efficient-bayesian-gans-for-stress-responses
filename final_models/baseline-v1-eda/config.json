@@ -1,0 +1,21 @@
+{
+    "data_path": "data/processed/physio_data.pt",
+    "batch_size": 64,
+    "val_split": 0.2,
+    "test_split": 0.1,
+    "latent_dim": 64,
+    "hidden_dim": 512,
+    "num_layers": 2,
+    "model_type": "EDA",
+    "use_multiscale": true,
+    "lr_g": 0.0002,
+    "lr_d": 0.0001,
+    "beta1": 0.5,
+    "beta2": 0.999,
+    "n_epochs": 300,
+    "save_interval": 10,
+    "patience": 80,
+    "model_dir": "models",
+    "seed": 42,
+    "initial_noise": 0.15
+}

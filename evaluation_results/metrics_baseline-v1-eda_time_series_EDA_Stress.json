@@ -1,0 +1,28 @@
+{
+    "EDA_series_RMSE": 1.483326109679274,
+    "EDA_series_MMD": 0.03987312316894531,
+    "EDA_series_Wasserstein": 0.30055356059867855,
+    "EDA_series_FID_like": 0.05812264233827591,
+    "EDA_series_Real_Stats": {
+        "EDA_series": {
+            "mean": 1.4679220914840698,
+            "std": 0.9415655732154846,
+            "min": -0.6062070727348328,
+            "max": 3.064641237258911,
+            "range": 3.6708483695983887,
+            "median": 1.7134630680084229
+        }
+    },
+    "EDA_series_Generated_Stats": {
+        "EDA_series": {
+            "mean": 1.5849953889846802,
+            "std": 1.152317762374878,
+            "min": -0.1791161596775055,
+            "max": 3.96854567527771,
+            "range": 4.1476616859436035,
+            "median": 1.695432186126709
+        }
+    },
+    "EDA_series_Classifier_Mean_Accuracy": 0.9428571428571428,
+    "EDA_series_Classifier_Std_Accuracy": 0.03462628469583091
+}
