@@ -83,7 +83,7 @@ The project includes various visualizations:
 - **Training Progress**: Training history plots in each model's directory
 - **Evaluation Results**: Detailed evaluation metrics and plots in `evaluation_results/`
 - **Correlation Analysis**: Correlation plots in `correlation_analysis_results/`
-- **Visualization Gallery**: Various visualizations in the `plots/` directory
+- **Evaluation Visualizations**: Plots of evaluation metrics, uncertainty estimates, and comparative model performance in the `plots/` directory
 
 ## Prerequisites
 
@@ -145,13 +145,15 @@ python -m src.training.train_var_bayes_gan --data_path data/processed_data.pt --
 ```
 
 Additional parameters for Variational Bayesian GAN:
-- `--prior`: Prior distribution type: 'gaussian', 'laplace', or 'scaled_mixture' (default: 'gaussian')
-- `--kl_weight`: Weight for KL divergence term in loss function (default: 0.01)
-- `--prior_sigma`: Standard deviation for Gaussian prior (default: 1.0)
-- `--prior_scale`: Scale parameter for Laplace prior (default: 1.0)
-- `--mixture_scale1`: First scale parameter for scaled mixture prior (default: 0.5)
-- `--mixture_scale2`: Second scale parameter for scaled mixture prior (default: 2.0)
-- `--mixture_weight`: Mixing weight for scaled mixture prior (default: 0.5)
+- `--prior_type`: Type of prior distribution: 'gaussian', 'scaled_mixture_gaussian', 'laplace' (default: 'gaussian')
+- `--sigma`: Standard deviation for Gaussian prior (default: 1.0)
+- `--sigma1`: Sigma1 for scaled mixture Gaussian prior (default: 1.0)
+- `--sigma2`: Sigma2 for scaled mixture Gaussian prior (default: 0.1)
+- `--pi`: Mixture coefficient for scaled mixture Gaussian prior (default: 0.5)
+- `--b`: Scale parameter for Laplace prior (default: 1.0)
+- `--kl_weight`: Final weight for KL divergence term (default: 0.001)
+- `--kl_annealing_start`: Epoch to start KL weight annealing (default: 35)
+- `--kl_annealing_end`: Epoch to end KL weight annealing (default: 85)
 
 #### Bayesian Dropout GAN
 
@@ -160,9 +162,8 @@ python -m src.training.train_bdgan --data_path data/processed_data.pt --model_ty
 ```
 
 Additional parameters for Bayesian Dropout GAN:
-- `--dropout_rate`: Dropout rate for Bayesian Dropout (default: 0.2)
-- `--weight_decay`: Weight decay for L2 regularization (default: 1e-5)
-- `--mc_samples`: Number of Monte Carlo samples during training (default: 5)
+- `--dropout_rate`: Dropout probability for Bayesian layers (default: 0.2)
+- `--mc_samples`: Number of Monte Carlo samples for uncertainty (default: 10)
 
 ### Evaluating Models
 
@@ -185,17 +186,15 @@ Evaluation parameters:
 #### Correlation Analysis
 
 ```bash
-python -m src.evaluation.correlation_evaluation --model_dir models/baseline-v1-eda --data_type eda --test_data_path data/processed_data.pt
+python -m src.evaluation.correlation_evaluation --model_dir models/baseline-v1-eda --test_data_path data/processed_data.pt --output_dir correlation_analysis_results --num_gen_samples 100 --seed 42
 ```
 
-Correlation analysis parameters:
-- `--model_dir`: Path to the model directory [required]
-- `--data_type`: Type of data to evaluate: 'eda', 'bvp', or 'features' [required]
-- `--test_data_path`: Path to the test data [required]
-- `--output_dir`: Directory to save correlation results (default: "correlation_analysis_results")
-- `--num_samples`: Number of samples to generate (default: 100)
-- `--condition`: Condition to evaluate: 1=Baseline, 2=Stress, 3=Amusement (default: 2)
-- `--save_plots`: Whether to save correlation plots (default: True)
+Parameters for correlation analysis:
+- `--model_dir`: Path to the directory containing the 'best_*.pt' model checkpoint and 'config.json'. Model MUST be of type 'features'.
+- `--test_data_path`: Path to the .pt file containing the real test dataset (with HRV_features and EDA_features).
+- `--output_dir`: Directory to save the correlation heatmap plots and metrics JSON file (default: "correlation_analysis_results").
+- `--num_gen_samples`: Total number of samples to generate across all conditions. If 0, uses the total number of real samples found (default: 0).
+- `--seed`: Random seed for reproducibility (default: 42).
 
 ## Development Strategies
 
