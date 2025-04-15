@@ -4,4 +4,5 @@ __pycache__/
 data/raw/
 venv/
 models/
+!src/models/
 final_models/**/*.pt
