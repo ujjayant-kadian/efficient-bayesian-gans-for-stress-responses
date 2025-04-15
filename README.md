@@ -121,7 +121,7 @@ Common training parameters:
 - `--hidden_dim`: Hidden dimension size (default: 256)
 - `--num_layers`: Number of LSTM layers for time series models (default: 2)
 - `--model_type`: Type of model to train: 'all', 'EDA', 'BVP', or 'features' (default: 'all')
-- `--use_multiscale`: Use multi-scale generator for improved signal quality
+- `--use_multiscale`: Enable multi-scale generator architecture for improved signal quality (default: False)
 - `--lr_g`: Generator learning rate (default: 0.0002)
 - `--lr_d`: Discriminator learning rate (default: 0.0001)
 - `--beta1`: Beta1 for Adam optimizer (default: 0.5)
@@ -131,6 +131,12 @@ Common training parameters:
 - `--patience`: Patience for early stopping (default: 50)
 - `--seed`: Random seed for reproducibility (default: 42)
 - `--initial_noise`: Initial instance noise level for training stability (default: 0.15)
+
+The multi-scale generator architecture improves upon the basic GAN implementation by:
+1. Generating signals at multiple temporal resolutions, allowing better capture of both fine-grained details and long-term patterns
+2. Using skip connections between different scales to preserve information flow
+3. Particularly effective for physiological signals like BVP that contain both high-frequency components (e.g., pulse waves) and low-frequency trends (e.g., heart rate variability)
+4. Helps prevent mode collapse by encouraging diversity at different temporal scales
 
 #### Variational Bayesian GAN
 
